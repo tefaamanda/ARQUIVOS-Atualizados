@@ -33,7 +33,7 @@
         </div>
         <nav>
             <div>
-                <a href="" class="text-nav">PÁGINA INICIAL</a>
+                <a href="landing-page.html" target="_blank" class="text-nav">PÁGINA INICIAL</a>
             </div>
         </nav>
     </header>
@@ -44,7 +44,7 @@
             <div class="row">
 
                 <div class="col-sm-6 centralizar-conteudo">
-                    <h1>Olá! Faça seu <br> cadastro aqui!</h1>
+                    <h1 class="esp">Olá! Faça seu <br> cadastro aqui!</h1>
                     <form action="" id="formCadastroUsuario">  
                         <select name="tipo" id="tipo" class="select">
                                 <option selected disabled>Selecione seu tipo</option>
@@ -61,7 +61,7 @@
                         </div>  
 
                         <div class="col-sm-6">
-                            <div class="div-branca" id="cadastro" style="">
+                            <div class="div-branca aa" id="cadastro">
                                 <input type="number" placeholder="CNPJ" name="cnpj">
                                 <input type="text" placeholder="Categoria" name="categoria">
                                 <input type="text" placeholder="Descrição da causa" name="descricao_da_causa">
@@ -94,12 +94,12 @@
                     <img class="logo2 tam" src="assets/img/logo.png" alt="Logo da fundação 'Doe Aí'.">
                 </div>
 
-                <div class="col-md-2 col-6 text-center margin">
+                <div class="col-md-2 col-12 text-center margin">
                     <h5 class="pb-2 tam2">TELEFONE</h5>
-                    <h6>(18) 99120-3762</h6>
+                    <h6 class="p-tt">(18) 99120-3762</h6>
                 </div>
 
-                <div class="col-md-2 col-6 text-center margin">
+                <div class="col-md-2 col-12 text-center margin">
                     <h5 class="pb-2 tam2">SOBRE NÓS</h5>
                     <h6>• ONGs</h6>
                     <h6 class="p-t">• Doações</h6>
@@ -108,10 +108,18 @@
                 <div class="col-md-5 text-center">
                     <h5 class="pb-2 tam2">NOS ACOMPANHE</h5>
                     <div class="space">
-                        <img class="imgfooter" src="assets/img/facebook.png" alt="Logo do Facebook.">
-                        <img class="imgfooter" src="assets/img/instagram.png" alt="Logo do Instagram.">
-                        <img class="imgfooter alt" src="assets/img/youtube.png" alt="Logo do Youtube.">
-                        <img class="imgfooter" src="assets/img/tik tok.png" alt="Logo do Tik Tok.">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img class="imgfooter" src="assets/img/facebook.png" alt="Logo do Facebook.">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img class="imgfooter" src="assets/img/instagram.png" alt="Logo do Instagram.">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img class="imgfooter alt" src="assets/img/youtube.png" alt="Logo do Youtube.">
+                        </a>
+                        <a href="https://www.tiktok.com" target="_blank">
+                            <img class="imgfooter" src="assets/img/tik tok.png" alt="Logo do Tik Tok.">
+                        </a>
                     </div>
                 </div>
 
@@ -125,14 +133,19 @@
 </body>
 
 <script>
-    let input = document.querySelector("#query")
-    input.addEventListener("focus", function () {
-        input.placeholder = "Busque por ONGs, vagas e endereços."
-    })
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputField = document.getElementById("query");
 
-    input.addEventListener("focusout", function () {
-        input.placeholder = "Busque por ONGs..."
-    })
+        inputField.addEventListener("focus", function() {
+            // Altera o placeholder quando o campo de input é focado (clicado)
+            this.placeholder = "Busque por ONGs, vagas e endereços.";
+        });
+
+        inputField.addEventListener("blur", function() {
+            // Restaura o placeholder original quando o campo de input perde o foco
+            this.placeholder = "Busque por ONGs...";
+        });
+    });
 
     $("#tipo").on("change", function(){
         var tipo = $("#tipo").val();
@@ -143,7 +156,6 @@
             $("#cadastro").css("opacity", 100)
         }
     })
-
 
     $("#formCadastroUsuario").on("submit", function(e){
         // Não atualiza a página
