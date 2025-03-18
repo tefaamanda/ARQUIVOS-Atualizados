@@ -55,7 +55,11 @@
                                 <input type="text" placeholder="Nome" name="nome">
                                 <input type="email" placeholder="E-mail" name="e_mail">
                                 <p class="mensagem-condicao">*O e-mail deve ser um não cadastrado.</p>
-                                <input type="password" placeholder="Senha" name="senha">
+                                <div>
+                                    <input type="password" placeholder="Senha" name="senha" class="ww" id="senha">
+                                    <img id="eye-icon" class="eye-icon" src="assets/img/olho1.png" alt="Mostrar/Ocultar Senha" onclick="togglePassword()">
+                                </div>
+
                                 <p class="mensagem-condicao">*A sua senha precisa ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.</p>
                             </div>
                         </div>  
@@ -214,5 +218,16 @@
             }
         })
     })
+
+    function togglePassword() {
+                var senhaField = document.getElementById("senha");
+                var eyeIcon = document.getElementById("eye-icon");
+
+                if (senhaField.type === "password") {
+                    senhaField.type = "text";
+                } else {
+                    senhaField.type = "password";
+                }
+            }
 </script>
 </html>

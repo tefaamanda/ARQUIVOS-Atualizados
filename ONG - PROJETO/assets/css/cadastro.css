@@ -167,6 +167,16 @@ h1 {
 
 }
 
+.eye-icon {
+    position: absolute;
+    right: 669px;
+    top: 103.7%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -177,6 +187,10 @@ h1 {
 .col-6 {
     width: 50%;
     padding: 20px;
+}
+
+.ww {
+    width: 503px;
 }
 
 .div-branca {
