@@ -421,6 +421,16 @@ footer {
         margin-bottom: 0px;
     }
 
+    .eye-icon {
+        position: none;
+        right: 0;
+        top: 0%;
+        transform: translateY(-0%);
+        cursor: pointer;
+        width: 0px;
+        height: 0px;
+    }
+
 /* Início - Rodapé */
 
 footer {
